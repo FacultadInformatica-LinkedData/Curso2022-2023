@@ -1,0 +1,16 @@
+@base <http://assignment2/> .
+@prefix fi: <https://oeg.fi.upm.es#> .
+@prefix clases: <https://assignment2/classes#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+clases:ClassRoom03 fi:contains clases:Table322 ;
+               fi:contains clases:Sensor347 .
+
+clases:Table322 fi:hasOwner clases:ETSIInformaticos .
+
+clases:ETSIInformaticos fi:hasName "ETSI Informáticos" .
+
+clases:Sensor347 fi:hasMeasurement clases:Measurement8432 .
+
+clases:Measurement8432 fi:hasTemperature "29"^^xsd:integer ;
+		               fi:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
