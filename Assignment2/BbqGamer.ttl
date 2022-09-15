@@ -1,0 +1,15 @@
+@prefix object: <http://example.org/> .
+@prefix ontology: <http://oeg.fi.upm.es/def/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+object:ClassRoom03 ontology:contains object:Sensor347 ;
+                   ontology:contains object:Table322 .
+ 
+object:Sensor347 ontology:hasMeasurment object:Measurment8432 .
+
+object:Measurment8432 ontology:hasTemperature 29 ;
+                      ontology:"2022-9-12T12:01:12"^^xsd:datetime .
+
+object:Table322 ontology:hasOwner object:ETSIInformaticos .
+
+object:ETSIInformaticos ontology:hasName "ETSI Informáticos" .
