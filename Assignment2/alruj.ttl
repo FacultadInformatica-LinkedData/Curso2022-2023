@@ -1,0 +1,11 @@
+@prefix upm: <https://oeg.fi.upm.es/ > .
+@prefix cl: <https://oeg.fi.upm.es/def/ > .
+@prefix rs: <https://oeg.fi.upm.es/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema# > .
+rs:ClassRoom03 upm:contains  cl:Sensor347;
+               upm:contains  cl:Table322.
+rs:Table322 upm:hasOwner cl:ETSIInformaticos .
+rs:ETSIInformaticos upm:hasName  "ETSI Informáticos" .
+rs:Sensor347 upm:hasMeasurement cl:Measurement8432 .
+rs:Measurement8432 upm:hasTemperature  "29";
+                                        upm:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
