@@ -1,0 +1,15 @@
+@base <http://assignment2/>.
+@prefix ontology: <https://fi.upm.es/relation/> .
+@prefix ob: <https://fi.upm.es/objetc/>
+
+ob:ClassRoom03 ontology:contains ob:Table322 ;
+               ontology:contains ob:Sensor347 .
+
+ob:Table322 ontology:hasOwner ob:ETSIInformaticos .
+
+ob:ETSIInformaticos ontology:hasName "ETSI Informáticos" .
+
+ob:Sensor347 ontology:hasMeasurement ob:Measurement8432 .
+
+ob:Measurement8432 ontology:hasTemperature "29" ;
+		               ontology:atTime "2022-09-12T12:01:12".
