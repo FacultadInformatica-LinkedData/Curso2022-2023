@@ -1,0 +1,107 @@
+{
+    "@context":{
+        "sch":"http://www.schema.org/",
+        "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "fsm":"http://personal.ontology.es/entity#",
+        "birthDate":{
+            "@id":"sch:birthDate",
+            "@type":"xsd:date"
+        }
+    },
+  	"@id":"fsm:Fernando",
+    "@type":"sch:Person",
+    "sch:name": "Fernando F. S-M.",
+    "birthDate": "1900-04-09",
+    "sch:parent": [
+        {
+            "@type":"sch:Person",
+            "@id":"fsm:Nill",
+            "sch:name": "Nill"
+        },
+        {
+            "@type":"sch:Person",
+            "@id":"fsm:Walt",
+            "sch:name": "Walt"
+        }
+    ],
+    "sch:address": {
+      	"@id":"fsm:CurrentAddress",
+        "@type":"sch:PostalAddress",
+        "sch:addressCountry": "Spain",
+        "sch:addressRegion": "Madrid",
+        "sch:addressLocality":"Somewhere in Madrid",
+        "sch:postalCode":"00000"
+    },
+    "fsm:studies": {
+        "@context":{        
+            "upm_courses":"http://upm.ontology.es/courses#",
+            "oeg_people":"http://oeg.fi.upm.es/def/people#",
+            "active_courses":"sch:hasCourseInstance",
+            "teachers":{
+                "@id":"sch:instructor",
+                "@type":"@id"
+            },
+            "description":"rdfs:comment",
+            "institution":"rdfs:label"
+        },
+        "@id":"fsm:CurrentStudies",
+        "@type":"sch:Course",
+        "institution": "UPM",
+        "sch:url":"https://www.fi.upm.es/",
+        "active_courses": [
+            {
+                "@type":"sch:CourseInstance",
+                "@id":"upm_courses:105000057",
+                "sch:courseCode": "105000057",
+                "sch:name": "Web SemÁntica, Linked Data Y Grafos De Conocimientos",
+                "teachers": [
+                    "oeg_people:Asun",
+                    "oeg_people:Orcar",
+                    "oeg_people:Raul"
+                ],
+                "description": "El objetivo de esta asignatura es proporcionar la base teórica y práctica sobre los fundamentos metodológicos y tecnológicos implicados en la generación y publicación de vocabularios y datos en la Web de datos enlazados, así como en forma de grafos de conocimientos..."
+                },
+                {
+                    "@type":"sch:CourseInstance",
+                    "@id":"upm_courses:105000011",
+                    "sch:courseCode": "105000011",
+                    "sch:name": "English For Professional And Academic Communication",
+                    "teachers": [
+                        "..."
+                    ],
+                    "description": "..."
+                },
+                {
+                    "@type":"sch:CourseInstance",
+                    "@id":"upm_courses:105000072",
+                    "sch:courseCode": "105000072",
+                    "sch:name": "Practicum",
+                    "teachers": [
+                        "..."
+                    ],
+                    "description": "..."
+                },
+                {
+                    "@type":"sch:CourseInstance",
+                    "@id":"upm_courses:105001043",
+                    "sch:courseCode": "105001043",
+                    "sch:name": "Programming For Mobile Devices",
+                    "teachers": [
+                        "..."
+                    ],
+                    "description": "..."
+                },
+                {
+                    "@type":"sch:CourseInstance",
+                    "@id":"upm_courses:105000058",
+                    "sch:courseCode": "105000058",
+                    "sch:name": "Sistemas De Planificación",
+                    "teachers": [
+                        "..."
+                    ],
+                    "description": "..."
+                }
+        ]
+        }
+    }

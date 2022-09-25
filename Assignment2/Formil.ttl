@@ -1,0 +1,9 @@
+@prefix : <http://example.org/#> .
+
+:ClassRoom03 :contains :Sensor347;
+             :contains :Table322.
+:Sensor347 :hasMeasurement :Measurement8432.
+:Measurement8432 :hasTemperature 29;
+                 :atTime "2022-09-12T12:01:12"^^xsd:dateTime.
+:Table322 :hasOwner :ETSIInformaticos.
+:ETSIInformaticos :hasName "ETSI Informáticos".

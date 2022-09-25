@@ -1,0 +1,16 @@
+@base <http://oeg.fi.upm.es/resource/prueba/> .
+@prefix tortuga: <http://oeg.fi.upm.es/def/> .
+@prefix objeto: <http://oeg.fi.upm.es/resource> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ 
+objeto:ClassRoom03  tortuga:contains objeto:Sensor347 ;
+              tortuga:contains objeto:Table322 . 
+
+objeto:Sensor347  tortuga:hasMeasurement objeto:Measuremment8432 .
+
+objeto:Measuremment8432  tortuga:hasTemperature "29"^^xsd:double ;
+                   tortuga:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
+
+objeto:Table322  tortuga:hasOwner objeto:ETSIInformaticos .
+
+objeto:ETSIInformaticos tortuga:hasName "ETSI Informáticos" .

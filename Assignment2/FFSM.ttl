@@ -1,0 +1,9 @@
+@prefix: <http://example-site.com/collection#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+:ClassRoom03 :contains :Sensor347 , :Table322 .
+:Sensor347 :hasMeasurement :Measurement8432 .
+:Measurement8432 :hastTemperature 29 ;
+    :atTime "2022-9-12T12:01:12"^^xsd:dateTime .
+:Table322 :hastOwner :ETSIInformaticos .
+:ETSIInformaticos :hastName "ETSI Informáticos" .  

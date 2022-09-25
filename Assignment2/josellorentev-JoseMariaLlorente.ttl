@@ -1,0 +1,15 @@
+@base <http://Assignment2/>.
+@prefix clases: <http://Assignment2/clases#>.
+@prefix ontology: <http://Assignment2/def#>.
+
+clases:ClassRoom03 ontology:contains clases:Sensor347;
+                   ontology:contains clases:Table322.
+
+clases:Sensor347 ontology:hasMeasurement clases:Measurement8432.
+
+clases:Table322 ontology:hasOwner clases:ETSIInformaticos.
+
+clases:Measurement8432 ontology:hasTemperature "29";
+                       ontology:atTime "2022-09-12T12:01:12".
+
+clases:ETSIInformaticos ontology:hasName "ETSI Informaticos".

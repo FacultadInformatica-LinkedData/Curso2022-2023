@@ -1,0 +1,15 @@
+@base <http://oeg.fi.upm.es/def/classroom> . # example base like the slides
+@prefix <https://oeg.fi.upm.es/def/classroom#> . # example prefix like the slides
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .# mandatory imo
+
+:ClassRoom03 :contains :Table322 ;
+               :contains :Sensor347 .
+
+:Table322 :hasOwner :ETSIInformaticos .
+
+:ETSIInformaticos :hasName "ETSI Informáticos" .
+
+:Sensor347 :hasMeasurement :Measurement8432 .
+
+:Measurement8432 :hasTemperature "29"^^xsd:integer ;
+		               :atTime "2022-09-12T12:01:12"^^xsd:dateTime .
