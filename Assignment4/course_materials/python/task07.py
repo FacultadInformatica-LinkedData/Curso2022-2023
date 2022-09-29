@@ -28,7 +28,7 @@ from rdflib.plugins.sparql import prepareQuery
 q1 = prepareQuery('''
   SELECT ?Sub
     WHERE{
-      ?Sub rdfs:subClassOf ?Person
+      ?Sub rdfs:subClassOf <http://somewhere#Person>
     }
     '''
       )
@@ -39,26 +39,28 @@ for r in g.query(q1):
 
 """
 
-q1 = prepareQuery('''
+q2 = prepareQuery('''
   SELECT ?Sub ?Person
     WHERE{
-      ?Sub rdfs:subClassOf ?Person
+      ?Sub rdfs:subClassOf <http://somewhere#Person> .
+      ?Person rdf:type <http://somewhere#Person> .
       }
       '''
       )
-for r in g.query(q1):
+for r in g.query(q2):
   print(r.Sub, r.Person)
 
 """**TASK 7.3: List all individuals of "Person" and all their properties including their class with RDFLib and SPARQL**
 
 """
 
-q1 = prepareQuery('''
-  SELECT ?sub ?Person
+q3 = prepareQuery('''
+  SELECT ?Sub ?Person ?prop
     WHERE{
-      ?sub rdf:type ?Person
+      ?Sub rdf:type <http://somewhere#Person> .
+      ?Person ?porp ?z .
       }
       '''
       )
-for r in g.query(q1):
-  print(r.sub, r.Person)
+for r in g.query(q3):
+  print(r.Sub, r.Person)
