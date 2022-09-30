@@ -69,4 +69,4 @@ g.add((ns.JaneSmith, VCARD.fn, Literal("Smith")))
 # TO DO
 # Visualize the results
 g.add((ns.UPM, RDF.type, ns.University))
-g.add((ns.JohnSmith, VCARD.works, ns.UPM))
+g.add((ns.JohnSmith, ns.works, ns.UPM))

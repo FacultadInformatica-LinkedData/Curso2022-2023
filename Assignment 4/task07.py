@@ -52,13 +52,13 @@ for r in g.query(q1):
 # Visualize the results
 q2 = prepareQuery('''
   SELECT 
-    ?Subject
+    ?s
   WHERE { 
     {
-      ?Subject rdf:type ns:Person.
+      ?s rdf:type ns:Person.
     } UNION{
       ?subClass rdfs:subClassOf ns:Person.
-      ?Subject rdf:type ?subClass   
+      ?s rdf:type ?subClass   
     }  
   }
   ''',
@@ -76,20 +76,20 @@ for r in g.query(q2):
 
 
 q2 = prepareQuery('''
-  SELECT 
-    ?Subject ?Properties ?Class
-  WHERE { 
-    {
-      ?Subject rdf:type ns:Person.
-      ?Subject ?Properties ?Class
-    } UNION{
-      ?subClass rdfs:subClassOf ns:Person.
-      ?Subject rdf:type ?subClass.
-      ?Subject ?Properties ?Class.   
-    }  
+SELECT ?s ?p ?o
+  WHERE {
+   {
+    ?s rdf:type ns:Person.
+    ?s ?p ?o1
+
+  }UNION{ 
+     ?s rdf:type ?s1.
+     ?s ?p ?o1.
+     ?s1 rdfs:subClassOf ns:Person
+   }
   }
   ''',
-  initNs = { "rdfs":RDFS, "ns":ns, "rdf":RDF}
+  initNs = { "ns": ns, "rdf": RDF, "rdfs": RDFS}
 )
 
 
