@@ -9,8 +9,8 @@ Original file is located at
 **Task 07: Querying RDF(s)**
 """
 
-!pip install rdflib 
-github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2021-2022/master/Assignment4/course_materials"
+#!pip install rdflib 
+#github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2021-2022/master/Assignment4/course_materials"
 
 """Leemos el fichero RDF de la forma que lo hemos venido haciendo"""
 
@@ -45,32 +45,52 @@ for r in g.query(q1):
 
 # TO DO
 q2 = prepareQuery('''
-  SELECT DISTINCT ?subj ?subj2 WHERE {
-      ?subj rdf:type <http://somewhere#Person>.
-      ?subclass rdfs:subClassOf <http://somewhere#Person>.
-      ?subj2 rdf:type ?subclass.
+  SELECT DISTINCT ?subj
+  WHERE { 
+    {
+      ?subj rdf:type <http://somewhere#Person>. 
+    }
+    UNION {
+      ?prop rdfs:subClassOf <http://somewhere#Person>.
+      ?subj rdf:type ?prop
+    }
   }
   ''',
-  initNs = { "rdfs": RDFS, "rdf": RDF}
-)
+   initNs={"rdfs": RDFS, "rdf": RDF}
+  )
 # Visualize the results
 for r in g.query(q2):
      print(r)
-# Visualize the results
+for s, p, o in g.triples((None, None, "http://somewhere#Person")):
+  print(s)
 
 """**TASK 7.3: List all individuals of "Person" and all their properties including their class with RDFLib and SPARQL**
 
 """
 
 q3 = prepareQuery('''
-  SELECT ?subj ?property ?class WHERE {
-      ?subj rdf:type <http://somewhere#Person>.
-      ?subj ?prop ?obj.
-      ?prop rdf:type ?class.
-  }
+  SELECT DISTINCT ?subj ?prop ?obj
+  WHERE{
+  	  {
+       ?subj rdf:type <http://somewhere#Person>.
+       ?subj ?prop ?obj
+     } 
+    UNION {
+        ?subj2 rdfs:subClassOf <http://somewhere#Person>.
+        ?subj rdf:type ?subj2 .
+       ?subj ?prop ?obj
+      }
+    }
   ''',
-  initNs = {"rdf": RDF}
-)
+      initNs={"rdf": RDF, "rdfs": RDFS}
+     )
+
+
+
 # Visualize the results
 for r in g.query(q3):
     print(r)
+
+for s, p, o in g.triples((None, None, ns.Person)):
+  for s1,p1,o1 in g.triples((s,None,None)):
+    print(s1,p1,o1)
