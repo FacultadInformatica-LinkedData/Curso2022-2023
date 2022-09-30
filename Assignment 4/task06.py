@@ -60,9 +60,11 @@ for s, p, o in g:
 # Visualize the results
 VCARD = Namespace("http://www.w3.org/2001/vcard-rdf/3.0#")
 
-g.add((ns.JaneSmith, VCARD.fullName, Literal("Jane Smith")))
-g.add((ns.JaneSmith, VCARD.given, Literal("Jane")))
-g.add((ns.JaneSmith, VCARD.fn, Literal("Smith")))
+g.add((ns.JaneSmith, ns.fullName, Literal("Jane Smith")))
+g.add((ns.JaneSmith, ns.given, Literal("Jane")))
+g.add((ns.JaneSmith, ns.fn, Literal("Smith")))
+for s,p,o in g.triples((ns.JaneSmith, None, None)):
+  print(s,p,o)
 
 """**TASK 6.5: Add UPM as the university where John Smith works**"""
 
