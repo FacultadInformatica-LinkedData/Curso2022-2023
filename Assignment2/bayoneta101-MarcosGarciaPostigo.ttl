@@ -1,0 +1,15 @@
+@prefix : <http://assignment2a/ClassRoom/> .
+@prefix ontology: <http://upm/Devices#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:class03 ontology:contains :sensor347,
+    :table322 .
+
+:departETSIInformaticos ontology:hasName "ETSIInformaticos" .
+
+:measur8432 ontology:atTime "2022-09-19"^^xsd:date;
+  ontology:hasTemperature "29"^^xsd:int .
+
+:sensor347 ontology:hasMeasurement :measur8432 .
+
+:table322 ontology:hasOwner :departETSIInformaticos .

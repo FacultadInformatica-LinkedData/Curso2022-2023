@@ -1,0 +1,43 @@
+{
+    "@context": 
+      {
+        "base":"http://example.ontology/resources#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "sch":"http://schema.org/",
+        "hasName":"sch:name",
+        "atTime": {
+            "@id":"base:atTime",
+            "@type":"xsd:dateTime"
+        },
+        "hasTemperature": 
+        {   "@id":"base:hasTemperature",
+            "@type": "xsd:integer"
+        }
+      }
+    ,
+    "@id": "base:Class01",
+    "@type": "base:Class",
+    "base:includes": [
+      {
+        "@id": "base:Sensor029",
+        "@type": "base:Sensor",
+        "base:hasMeasurement": {
+          "@id": "base:Measurement8401",
+          "@type": "base:Measurement",
+          "hasTemperature": "29",
+          "atTime": "2010-06-12T12:00:12"
+        }
+      },
+      {
+        "@id": "base:Computer101",
+        "@type": "base:Computer",
+        "base:hasOwner": {
+          "@id": "base:User10A",
+          "@type": "sch:Person",
+          "hasName": "Pedro"
+        }
+      }
+    ]
+  }
+  

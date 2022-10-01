@@ -1,0 +1,63 @@
+{
+  "@context": {
+ 	  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "person": "https://oeg.fi.upm.es/ontologies/persons/",
+    "teacher": "https://oeg.fi.upm.es/ontologies/teachers/",
+    "subject": "https://oeg.fi.upm.es/ontologies/subjects/",
+    "hometown":"rdfs:label",
+    "almaMater":"rdfs:label"
+  }
+  
+  "@id": "person:01",
+  "@type": "person",
+  "firtName": "Zuyi",
+  "lastName": "Li",
+  "hasHomeTown": "Hujiang",
+  "age": "23",
+  "almaMater": "UPM",
+  "nameOfFather": "Nai",
+  "nameOfMother": "Jin",
+  "subjects": [
+    {
+      "@id": "subject:01",
+      "@type": "subject",
+      "name": "semantic",
+      "teachers": [
+        {
+          "@id": "teacher:01",
+          "@type": "teacher",
+          "name": "Oscar"
+          "surname": "Corcho"
+        },
+        {
+          "@id": "teacher:02",
+          "@type": "teacher",
+          "name": "John"
+          "surname": "Smith"
+        }
+      ]
+    "description": "semantic"
+    },
+    
+    {
+      "@id": "subject:02",
+      "@type": "subject",
+      "name": "reconocimiento de formas",
+      "teachers": [
+        {
+          "@id": "teacher:03",
+          "@type": "teacher",
+          "name": "Juan",
+          "surnama": "Rodriguez"
+        },
+        {
+          "@id": "teacher:04",
+          "@type": "teacher",
+          "name": "Marta",
+          "surname": "Martinez"
+        }
+      ]
+      "description": "reconocimiento de formas"
+    }
+  ]  
+}

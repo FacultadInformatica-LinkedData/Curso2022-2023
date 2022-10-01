@@ -1,0 +1,35 @@
+{
+  "@context":{
+    "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":"http://www.w3.org/2001/XMLSchema#",
+    "class": "https://oeg.fi.upm.es/ontologies/classes/",
+    "equipment": "https://oeg.fi.upm.es/ontologies/equipments/",
+    "computer": "https://oeg.fi.upm.es/ontologies/computers/",
+    "user": "https://oeg.fi.upm.es/ontologies/users/",
+    "time": "xsd.dateTime"
+  }
+  
+  "@id": "class:01",
+  "@type": "class",
+  "sensor": {
+    "@id": "equipment:029",
+    "@type": "equipment",
+    "measurement": {
+      "temperature": "29",
+      "time": "2010-06-12T12:00:12"
+    }
+    "computer": {
+      "@id": "computer:101",
+      "@type": "computer"
+      "owner": {
+        "@id": "user:10A",
+        "@type": "user",
+        "name": "Pedro"
+      }
+    }
+  }
+
+
+
+
+}

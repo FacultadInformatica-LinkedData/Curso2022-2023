@@ -1,0 +1,9 @@
+@prefix dc:  <https://oeg.fi.upm.es/resource/> .
+@prefix ontology: <https://oeg.fi.upm.es/def/> .
+dc:ClassRoom03 ontology:contains dc:Sensor347 ;
+ontology:contains dc:Table322 .
+dc:Sensor347 ontology:hasMeasurement dc:Measurement8432 .
+dc:Measurement8432 ontology:hasTemperature "29" ;
+ontology:atTime "2022-09-12T12:01:12" .
+dc:Table322 ontology:hasOwner dc:ETSIInformaticos .
+dc:ETSIInformaticos ontology:hasName "ETSI Informáticos" .

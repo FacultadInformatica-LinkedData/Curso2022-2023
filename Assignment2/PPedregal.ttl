@@ -1,0 +1,14 @@
+@prefix resource: <http://www.sw.fi.upm.es/resource/> .
+@prefix predicate: <http://www.sw.fi.upm.es/predicate/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+resource:ClassRoom03 predicate:contains resource:Sensor347 ,
+                                        resource:Table322 .
+
+resource:Sensor347 predicate:hasMeasurement resource:Measurement8432 .
+resource:Measurement8432 predicate:hasTemperature "29"^^xsd:integer ;
+                        predicate:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
+
+resource:Table322 predicate:hasOwner resource:ETSIInformaticos .
+
+resource:ETSIInformaticos predicate:hasName "ETSI Informaticos" .

@@ -1,0 +1,31 @@
+@base <http://assignment2/ >
+
+@prefix class: <http://assignment2/resource/class>
+@prefix classes: <http://assignment2/def/classes#>
+
+@prefix table: <http://assignment2/resource/tables>
+@prefix tables: <http://assignment2/def/tables#>
+
+@prefix school: <http://assignment2/resource/school>
+@prefix schools: <http://assignment2/def/schools#>
+
+@prefix measurement: <http://assignment2/resource/measurement>
+@prefix measurements: <http://assignment2/def/measurements#>
+
+@prefix sensor: <http://assignment2/resource/sensor>
+@prefix sensors: <http://assignment2/def/sensors#>
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+class:ClassRoom03 classes:contains table:Table322 ;
+                classes:contains sensor:Sensor347 .
+
+sensor:Sensor347 sensors:hasMeasurement measurement:Measurement8432 .
+
+measurement:Measurement8432 measurements:hasTemperature "29"^^xsd:integer ;
+		               measurements:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
+
+table:Table322 tables:hasOwner school:ETSIInformaticos .
+
+school:ETSIInformaticos schools:hasName "ETSI Informáticos" .
+

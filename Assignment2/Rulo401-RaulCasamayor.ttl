@@ -1,0 +1,12 @@
+@base <http://oeg.fi.upm.es/def/> .
+@prefix obj: <http://oeg.fi.upm.es/def/object#> .
+@prefix place: <http://oeg.fi.upm.es/def/place#> .
+@prefix common: <http://oeg.fi.upm.es/def/common#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+place:ClassRoom03 place:contains obj:Sensor347 , obj:Table322 .
+obj:Sensor347 common:hasMeasurement common:Measurement8432 .
+common:Measurement8432 common:hasTemperature 29 ;
+		common:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
+obj:Table322 obj:hasOwner <#ETSIInformaticos> .
+<#ETSIInformaticos> common:hasName "ETSI Informáticos" .
