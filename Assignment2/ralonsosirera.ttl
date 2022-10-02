@@ -1,0 +1,12 @@
+@base <http://entrega2a/> .
+@prefix aulas: <http://entrega2a/aulas#> .
+@prefix fi: <http://fi.upm.es#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aulas:ClassRoom03 fi:contains aulas:Sensor347 ;
+                  fi:contains aulas:Table322 .
+aulas:Sensor347 fi:hasMeasurement aulas:Measurement8432 .
+aulas:Measurement8432 fi:hasTemperature 29 ;
+                      fi:atTime "2022-09-12T12:01:12"^^xsd:dateTime .
+aulas:Table322 fi:hasOwner aulas:ETSIInformaticos .
+aulas:ETSIInformaticos fi:hasName "ETSI Informáticos" .

@@ -1,0 +1,41 @@
+{
+    "@context": {
+        "sch":"http://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "id": "rdfs:label",
+        "type": "rdfs:label",
+        "fullName": "rdfs:label",
+        "hometown": "rdfs:label",
+        "age": "rdfs:label",
+        "almaMater": "rdfs:label",
+        "parents": "rdfs:label",
+        "subjects" : "subj:subjects",
+            "subjectsName":"subj:nam",
+            "subjectsTeachers":"subj:tea",
+            "subjectsDescription":"subj:bri"
+    },
+    "@id": "1",
+    "@type": "sch:viviente/persona",
+    "fullName": "David Eduardo Peña Perez-Puelles",
+    "hometown": "Caracas",
+    "age": "27",
+    "almaMater": "UPM",
+    "parents": "Sylvia y Orlando",
+    "subjects": [
+        {
+            "subjectsName":"Semantic Web, Linked Data and Knowledge Graphs",
+            "subjectsTeachers":"Oscar Corcho",
+            "subjectsDescription":"El objetivo de esta asignatura es proporcionar la base teórica y práctica sobre los fundamentos metodológicos y tecnológicos implicados en la generación y publicación de vocabularios y datos en la Web de datos enlazados, así como en forma de grafos de conocimientos"
+        },
+        {
+            "subjectsName":" Practicum",
+            "subjectsTeachers":"Loic Antonio Martinez Normand",
+            "subjectsDescription":"Desarrollo de tareas profesionales dentro de un entorno profesional"
+        },
+        {
+            "subjectsName":" Sistemas De Planificación",
+            "subjectsTeachers":"Vicente Martinez Orga",
+            "subjectsDescription":"Todos los procesos para ser desarrollados precisan de un proceso de planificación, de la bondad de ese plan se generará un proyecto malo, bueno u óptimo, la capacidad de planificar correctamente un plan debe ser aprendida, no es innata, por eso el conocimiento de diferentes técnicas de planificación ayudan al desarrollo correcto de un proyecto bien construido y desarrollado."
+        }
+    ]
+  }
