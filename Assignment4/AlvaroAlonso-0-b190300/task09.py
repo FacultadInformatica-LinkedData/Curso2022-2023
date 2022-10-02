@@ -9,7 +9,7 @@ Original file is located at
 **Task 09: Data linking**
 """
 
-#!pip install rdflib
+#pip install rdflib
 github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2020-2021/master/Assignment4/"
 
 from rdflib import Graph, Namespace, Literal, URIRef
@@ -20,30 +20,35 @@ g1.parse(github_storage+"resources/data03.rdf", format="xml")
 g2.parse(github_storage+"resources/data04.rdf", format="xml")
 
 """Busca individuos en los dos grafos y enlázalos mediante la propiedad OWL:sameAs, inserta estas coincidencias en g3. Consideramos dos individuos iguales si tienen el mismo apodo y nombre de familia. Ten en cuenta que las URI no tienen por qué ser iguales para un mismo individuo en los dos grafos."""
-from rdflib.plugins.sparql import prepareQuery
 from rdflib.namespace import RDF, RDFS
+from rdflib.plugins.sparql import prepareQuery
+
 VCARD = Namespace("http://www.w3.org/2001/vcard-rdf/3.0#")
-OWL = Namespace("http://www.w3.org/2002/07/owl#")
+ns1= Namespace("http://data.three.org#")
+ns2= Namespace("http://data.four.org#")
+OWL=Namespace("https://www.w3.org/TR/owl-ref/#")
 
-query1 = prepareQuery('''
-    SELECT DISTINCT ?Subject ?GivenName ?FamilyName WHERE {
-        ?Subject vcard:Given ?GivenName.
-        ?Subject vcard:Family ?FamilyName.
-    }
-    ''',
-    initNs={"vcard":VCARD}
-    ) 
+q1 = prepareQuery('''
+  SELECT ?Subject ?Given ?Family WHERE { 
+    ?Subject vcard:Given ?Given. 
+    ?Subject vcard:Family ?Family
+  }
+  ''',
+  initNs = { "vcard": VCARD}
+)
 
-resultados = [] 
+l=[]
+s=[]
 
-for r in g1.query(query1):
-    resultados.append((r.Subject,r.GivenName,r.FamilyName))
-
-for r1 in g2.query(query1):
-    for r2 in resultados:
-        if(r2[1] == r1.GivenName and r2[2] == r2.FamilyName): g3.add((r2[0],OWL.sameAs,r1.Subject))
-
-for s,p,o in g3:
-    print(s,p,o)
-
-#I understood sameAs is bidirectional but there is no need in adding the reverse triple (1 sameAs One)-> One sameAs 1
+for r1 in g1.query(q1):
+  s.append(r1.Subject)
+  l.append([r1.Given,r1.Family])
+for r in g2.query(q1):
+  if([r.Given,r.Family] in l):
+    print(s[l.index([r.Given,r.Family])], " / ",r.Subject,":  Able to link\n")
+    g3.add((r.Subject,OWL.sameAs,s[l.index([r.Given,r.Family])]))
+  else:
+    print(r.Subject,":  Not able to link\n")
+print("---------- LINKED ----------\n")
+for (s,p,o) in g3:
+  print(s,p,o)

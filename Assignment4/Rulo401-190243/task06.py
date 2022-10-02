@@ -28,34 +28,39 @@ g.add((ns.Researcher, RDF.type, RDFS.Class))
 for s, p, o in g:
   print(s,p,o)
 
-"""**TASK 6.1: Create a new class named "University"**"""
+"""TASK 6.1: Create a new class named "University"""
+
 g.add((ns.University, RDF.type, RDFS.Class))
-# Visualize the results
 for s, p, o in g:
   print(s,p,o)
-"""**TASK 6.2: Add "Researcher" as a subclass of "Person"**"""
+  
+"""TASK 6.2: Add "Researcher" as a subclass of "Person" """
+
 g.add((ns.Researcher, RDFS.subClassOf, ns.Person))
-# Visualize the results
 for s, p, o in g:
   print(s,p,o)
-"""**TASK 6.3: Create a new individual of Researcher named "Jane Smith"**"""
+
+"""TASK 6.3: Create a new individual of Researcher named "Jane Smith" """
+
 g.add((ns.JaneSmith, RDF.type, ns.Researcher))
-# Visualize the results
 for s, p, o in g:
   print(s,p,o)
-"""**TASK 6.4: Add to the individual JaneSmith the fullName, given and family names**"""
+
+"""TASK 6.4: Add to the individual JaneSmith the fullName, given and family names"""
+
+from rdflib import XSD
 VCARD = Namespace("http://www.w3.org/2001/vcard-rdf/3.0#")
-g.add((ns.JaneSmith, VCARD.FN, Literal("Jane Smith")))
-g.add((ns.JaneSmith, VCARD.Given, Literal("Jane")))
-g.add((ns.JaneSmith, VCARD.Family, Literal("Smith")))
-# Visualize the results
+g.add((ns.JaneSmith, VCARD.FN, Literal("Jane Smith", datatype=XSD.string)))
+g.add((ns.JaneSmith, VCARD.Family, Literal('Smith', datatype=XSD.string)))
+g.add((ns.JaneSmith, VCARD.Given, Literal("Jane", datatype=XSD.string)))
 for s, p, o in g:
-    print(s,p,o)
-"""**TASK 6.5: Add UPM as the university where John Smith works**"""
+  print(s,p,o)
+
+"""TASK 6.5: Add UPM as the university where John Smith works"""
+
 g.add((ns.UPM, RDF.type, ns.University))
-g.add((ns.Works,RDF.type,RDF.Property))
-g.add((ns.Works, RDFS.domain,ns.Person))
-g.add((ns.JohnSmith, ns.Works, ns.UPM))
-# Visualize the results
+g.add((ns.WorksAt, RDF.type, RDF.Property))
+g.add((ns.WorksAt, RDFS.domain, ns.Person))
+g.add((ns.JohnSmith, ns.WorksAt, ns.UPM))
 for s, p, o in g:
-    print(s,p,o)
+  print(s,p,o)

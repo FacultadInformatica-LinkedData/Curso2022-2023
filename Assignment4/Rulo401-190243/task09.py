@@ -20,30 +20,30 @@ g1.parse(github_storage+"resources/data03.rdf", format="xml")
 g2.parse(github_storage+"resources/data04.rdf", format="xml")
 
 """Busca individuos en los dos grafos y enlázalos mediante la propiedad OWL:sameAs, inserta estas coincidencias en g3. Consideramos dos individuos iguales si tienen el mismo apodo y nombre de familia. Ten en cuenta que las URI no tienen por qué ser iguales para un mismo individuo en los dos grafos."""
-from rdflib.plugins.sparql import prepareQuery
+
 from rdflib.namespace import RDF, RDFS
+from rdflib.plugins.sparql import prepareQuery
 VCARD = Namespace("http://www.w3.org/2001/vcard-rdf/3.0#")
 OWL = Namespace("http://www.w3.org/2002/07/owl#")
 
-query1 = prepareQuery('''
-    SELECT DISTINCT ?Subject ?GivenName ?FamilyName WHERE {
-        ?Subject vcard:Given ?GivenName.
-        ?Subject vcard:Family ?FamilyName.
-    }
+q = prepareQuery('''
+        SELECT DISTINCT ?Person ?Given ?Family WHERE{
+            ?Person vcard:Given ?Given.
+            ?Person vcard:Family ?Family
+        }
     ''',
     initNs={"vcard":VCARD}
-    ) 
+    )
 
-resultados = [] 
+rs = []
 
-for r in g1.query(query1):
-    resultados.append((r.Subject,r.GivenName,r.FamilyName))
+for r in g1.query(q):
+  rs.append((r.Person, r.Given, r.Family))
 
-for r1 in g2.query(query1):
-    for r2 in resultados:
-        if(r2[1] == r1.GivenName and r2[2] == r2.FamilyName): g3.add((r2[0],OWL.sameAs,r1.Subject))
+for r2 in g2.query(q):
+  for r1 in rs:
+    if(r1[1] == r2.Given and r1[2] == r2.Family):
+      g3.add((r1[0], OWL.sameAs, r2.Person))
 
 for s,p,o in g3:
-    print(s,p,o)
-
-#I understood sameAs is bidirectional but there is no need in adding the reverse triple (1 sameAs One)-> One sameAs 1
+  print(s,p,o)
