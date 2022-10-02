@@ -73,3 +73,4 @@ g.add((ns.JohnSmith, VCARD.Works, ns.UPM))
 # Visualize the results
 for s, p, o in g:
   print(s,p,o)
+  
