@@ -4,8 +4,353 @@
     <title>DataSet Analysis and URI Strategy</title>
 </head>
 <body>
-    <h4><strong>DataSet Analysis (TODO)</strong></h4>
+    <h4><strong>DataSet Analysis</strong></h4>
+		<table bgcolor = "black">
+			<tr bgcolor = "grey">
+				<th>Column</th>
+				<th>Type</th>
+				<th>Comments/Range</th>
+				<th>Problems</th>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>PROVINCIA</td>
+				<td>Integer</td>
+				<td>28</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>MUNICIPIO</td>
+				<td>Integer</td>
+				<td>79</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>ESTACION</td>
+				<td>Integer</td>
+				<td>4-60</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>MAGNITUD</td>
+				<td>Integer</td>
+				<td>1-43(see documentation)</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>PUNTO_MUESTREO</td>
+				<td>String</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>ANO</td>
+				<td>Integer</td>
+				<td>2022</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>MES</td>
+				<td>Integer</td>
+				<td>10</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>DIA</td>
+				<td>Integer</td>
+				<td>4</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H01</td>
+				<td>Decimal</td>
+				<td>0-270</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V01</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H02</td>
+				<td>Decimal</td>
+				<td>0-310</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V02</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H03</td>
+				<td>Decimal</td>
+				<td>0-220</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V03</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H04</td>
+				<td>Decimal</td>
+				<td>0-220</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V04</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H05</td>
+				<td>Decimal</td>
+				<td>0-180</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V05</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H06</td>
+				<td>Decimal</td>
+				<td>0-210</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V06</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H07</td>
+				<td>Decimal</td>
+				<td>0-230</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V07</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H08</td>
+				<td>Decimal</td>
+				<td>0-330</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V08</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H09</td>
+				<td>Decimal</td>
+				<td>0-530</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V09</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H10</td>
+				<td>Decimal</td>
+				<td>0-640</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V10</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H11</td>
+				<td>Decimal</td>
+				<td>0-370</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V11</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H12</td>
+				<td>Decimal</td>
+				<td>0-400</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V12</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H13</td>
+				<td>Decimal</td>
+				<td>0-270</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V13</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H14</td>
+				<td>Decimal</td>
+				<td>0-140</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V14</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H15</td>
+				<td>Decimal</td>
+				<td>0-120</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V15</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H16</td>
+				<td>Decimal</td>
+				<td>0-120</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V16</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H17</td>
+				<td>Decimal</td>
+				<td>0-120</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V17</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H18</td>
+				<td>Decimal</td>
+				<td>0-320</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V18</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H19</td>
+				<td>Decimal</td>
+				<td>0-120</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V19</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H20</td>
+				<td>Decimal</td>
+				<td>0-270</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V20</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H21</td>
+				<td>Decimal</td>
+				<td>0-400</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V21</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H22</td>
+				<td>Decimal</td>
+				<td>0-400</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V22</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H23</td>
+				<td>Decimal</td>
+				<td>0-350</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V23</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>H24</td>
+				<td>Decimal</td>
+				<td>0-230</td>
+				<td></td>
+			</tr>
+			<tr bgcolor = "lightgrey">
+				<td>V24</td>
+				<td>Boolean</td>
+				<td>V for “Valid”, N for “Non valid”</td>
+				<td>Non valid data exists, although very few</td>
+			</tr>
+		</table>
     <h4><strong>URI Strategy</strong></h4>
+    <p><br />Content Negotiation:<br /><br />The application will handle content negotiation very simple. When requesting resources with a slash URI, a JSON file will be returned whilst a<br />turtle file with the requested ontology will be what a hash URI returns</p>
     <p><br /># Pattern URI for resources:<br />http://www.semanticweb_g27.org/resource/{Class_name}/{resource_id}</p>
     <p># Pattern URI for Classes and Properties:<br />http://www.semanticweb_g27.org/ontology/AirQuality#[{Class_name} | {Property_name}]</p>
     <p>############<br /># Ontology URIs #<br />############</p>
