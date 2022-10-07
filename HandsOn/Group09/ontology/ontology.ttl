@@ -1,0 +1,165 @@
+@prefix : <http://madridturistsites.es/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://madridturistsites.es/>.
+
+#               Classes                #
+
+## http://madridturistsites.es/Monumento
+
+:Monumento rdf:type owl:Class.
+
+## http://madridturistsites.es/EdificaciónSingular
+
+:EdificaciónSingular rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Estatua
+
+:Estatua rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/GrupoEscultórico
+
+:GrupoEscultórico rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Puente
+
+:Puente rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Arco
+
+:Arco rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Lápida
+
+:Lápica rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Escultura
+
+:Escultura rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Fuente
+
+:Fuente rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Planetario
+
+:Planetario rdf:type owl:Class;
+    rdfs:subClassOf ns:Monumento.
+
+## http://madridturistsites.es/Autor
+
+:Autor rdf:type owl:Class.
+
+
+## http://madridturistsites.es/Dirección
+
+:Dirección rdf:type owl:Class.
+
+
+## http://madridturistsites.es/Coordenadas
+
+:Coordenadas rdf:type owl:Class.
+
+## http://madridturistsites.es/Vía
+
+:Vía rdf:type owl:Class.
+
+## http://madridturistsites.es/TipoVía
+
+:TipoVía rdf:type owl:Class.
+
+## http://madridturistsites.es/Barrio
+
+:Barrio rdf:type owl:Class.
+
+## http://madridturistsites.es/Localidad
+
+:Localidad rdf:type owl:Class.
+
+
+#            Object Properties         #
+
+## http://madridturistsites.es/ontolgy/nombre
+
+:nombre rdf:type owl:Class;
+    rdfs:range xsd:string.
+
+
+## http://madridturistsites.es/ontolgy/descripción
+
+:descripción rdf:type owl:Class;
+    rdfs:range xsd:string.
+
+
+## http://madridturistsites.es/ontolgy/consturidoEn
+
+:construidoEn rdf:type owl:Class;
+    rdfs:domain ns:Monumento;
+    rdfs:range xsd:dateTime.
+
+## http://madridturistsites.es/ontolgy/autor
+
+:autor rdf:type owl:Class;
+    rdfs:domain ns:Monumento;
+    rdfs:range ns:Autor.
+    
+
+## http://madridturistsites.es/ontolgy/seEncuentraEn
+
+:seEncuentraEn rdf:type owl:Class;
+    rdfs:domain ns:Monumento;
+    rdfs:range ns:Dirección.
+    
+## http://madridturistsites.es/ontolgy/tienePosición
+
+:tienePosición rdf:type owl:Class;
+    rdfs:domain ns:Monumento;
+    rdfs:range ns:Coordenadas.
+
+
+## http://madridturistsites.es/ontolgy/numero
+
+:numero rdf:type owl:Class;
+    rdfs:domain ns:Dirección;
+    rdfs:range xsd:integer.
+
+## http://madridturistsites.es/ontolgy/latitud
+
+:latitud rdf:type owl:Class;
+    rdfs:domain ns:Coordenadas;
+    rdfs:range xsd:integer.
+
+## http://madridturistsites.es/ontolgy/longitud
+
+:longitud rdf:type owl:Class;
+    rdfs:domain ns:Coordenadas;
+    rdfs:range xsd:integer.
+
+
+## http://madridturistsites.es/ontolgy/enVía
+
+:enVía rdf:type owl:Class;
+    rdfs:domain ns:Dirección;
+    rdfs:range ns:Vía.
+
+## http://madridturistsites.es/ontolgy/perteneceA
+
+:perteneceA rdf:type owl:Class.
+
+
+## http://madridturistsites.es/ontolgy/codigoBarrio
+
+:codigoBarrio rdf:type owl:Class;
+    rdfs:domain ns:Barrio;
+    rdfs:range xsd:Integer.

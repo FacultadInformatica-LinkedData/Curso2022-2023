@@ -1,0 +1,32 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix regeneratedWater: <http://base.regeneratedWater.com> .
+
+regeneratedWater: a owl:Ontology ;
+    dc:creator "Santiago Jose Guardo Vásquez, Isabel Martín González, Diego González Duce" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Template Ontology" ;
+    owl:versionInfo "0.0.1" .
+
+regeneratedWater:Date a owl:Class ;
+    rdfs:label "Date" .
+
+regeneratedWater:hasDate a owl:ObjectProperty ;
+    rdfs:label "has date" .
+
+regeneratedWater:hasParameter a owl:ObjectProperty ;
+    rdfs:label "has parameter" .
+
+regeneratedWater:hasSample a owl:ObjectProperty ;
+    rdfs:label "has sample" .
+
+regeneratedWater:parameter a owl:Class ;
+    rdfs:label "parameter" .
+
+regeneratedWater:purification_plant a owl:Class ;
+    rdfs:label "purification_plant" .
+
+regeneratedWater:sample a owl:Class ;
+    rdfs:label "sample" .
+

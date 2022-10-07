@@ -1,0 +1,50 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://HO-G1.linkeddata.es> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns: a owl:Ontology ;
+    dc:creator "Semantic Web 2022-23 (UPM) Group 01" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Alcobendas charging stations Ontology" ;
+    owl:versionInfo "0.0.1" .
+
+ns:Connector a owl:Class ;
+    rdfs:label "Connector" ;
+    rdfs:subClassOf ns:Peripheral .
+
+ns:hasAddress a owl:ObjectProperty ;
+    rdfs:label "has address" ;
+    rdfs:domain ns:Charging_station ;
+    rdfs:range ns:Address .
+
+ns:hasChargingStation a owl:ObjectProperty ;
+    rdfs:label "has charging station" ;
+    rdfs:domain ns:City ;
+    rdfs:range ns:Charging_station .
+
+ns:hasCoordinate a owl:ObjectProperty ;
+    rdfs:label "has coordinate" ;
+    rdfs:domain ns:Charging_station ;
+    rdfs:range ns:Coordinate .
+
+ns:hasPeripheral a owl:ObjectProperty ;
+    rdfs:label "has peripheral" ;
+    rdfs:domain ns:Charging_station ;
+    rdfs:range ns:Peripheral .
+
+ns:Address a owl:Class ;
+    rdfs:label "Address" .
+
+ns:City a owl:Class ;
+    rdfs:label "City" .
+
+ns:Coordinate a owl:Class ;
+    rdfs:label "Coordinate" .
+
+ns:Peripheral a owl:Class ;
+    rdfs:label "Peripheral" .
+
+ns:Charging_station a owl:Class ;
+    rdfs:label "Charging_station" .
+
