@@ -1,28 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
+<! DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Dataset Requirements </title>
 </head>
+
 <body>
+<h1>Dataset Requirements</h1>
+<p>For this project, a set of six requirements should be accomplished by the selected datasets. They are described next:</p>
+    <ul type="1">
+        <li>
+            <p> <strong>R1. Data are in one of the selected smart city domains.</strong>
+            </p>
+        </li>
+        <li>
+            <p> <strong>R2. Data are available as a CSV file</strong>
+            </p>
+        </li>
+        <li>
+            <p> <strong>R3. Data have an open license so they can be published.</strong>
+            </p>
+        </li>
+        <li>
+            <p> <strong>R4. Data can be easily linked with generic real-world entities.</strong>
+            </p>
+        </li>
+        <li>
+            <p> <strong>R5. Documentation exists for the data (optional).</strong>
+            </p>
+        </li>
+        <li>
+            <p> <strong>R6. Data can come from multiple data sources (optional).</strong>
+            </p>
+        </li>
+    </ul>
+<p>The next table shows the details of each dataset.</p>
+<table>
+  <tr>
+    <th>Dataset</th>
+    <th>R1 Smartcities Domain</th>
+    <th>R2 Serialization</th>
+    <th>R2 Comment</th>
+    <th>R3 License</th>
+    <th>R4 Linkage</th>
+    <th>R5 Documentation</th>
+    <th>R6 Datasources</th>
+    <th>Comment</th>
+  </tr>
+ <tr>
+  <td>Datadis Supplies</td>
+  <td>Energy</td>
+  <td>csv</td>
+  <td>Stored in private
+  DB exportable to csv</td>
+  <td>Public assets
+  private data, requires authorization</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Not available</td>
+  <td>Single
+  datasource: Datadis platform</td>
+  <td>access granted
+  only for a set of public buildings</td>
+ </tr>
+ <tr>
+  <td>Datadis timeseries EnergyConsumptionGridElectricity PT1H</td>
+  <td>Energy</td>
+  <td>csv</td>
+  <td>Stored in private
+  DB exportable to csv</td>
+  <td>Public assets
+  private data, requires authorization</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Not available</td>
+  <td>Single
+  datasource: Datadis platform</td>
+  <td>access granted
+  only for a set of public buildings</td>
+ </tr>
+ <tr>
+  <td>GPG patrimony</td>
+  <td>Government</td>
+  <td>csv</td>
+  <td>Stored in private
+  DB exportable to csv</td>
+  <td>Public assets
+  private data, requires authorization</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Not available</td>
+  <td>Single
+  datasource: Gesti&oacute del Patrimoni de la Generalitat</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>Gemweb buildings</td>
+  <td>Energy</td>
+  <td>csv</td>
+  <td>Stored in private
+  DB exportable to csv</td>
+  <td>Public assets
+  private data, requires authorization</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Not available</td>
+  <td>Single
+  datasource: Gemweb platform</td>
+  <td>access granted
+  only for a set of public buildings partial data</td>
+ </tr>
+ <tr>
+  <td>Gemweb entities</td>
+  <td>Energy</td>
+  <td>csv</td>
+  <td>Stored in private
+  DB exportable to csv</td>
+  <td>Public assets
+  private data, requires authorization</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Not available</td>
+  <td>Single
+  datasource: Gemweb platform</td>
+  <td>access granted
+  only for a set of public buildings partial data</td>
+ </tr>
+ <tr>
+  <td>Gemweb supplies</td>
+  <td>Energy</td>
+  <td>csv</td>
+  <td>Stored in private
+  DB exportable to csv</td>
+  <td>Public assets
+  private data, requires authorization</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Not available</td>
+  <td>Single
+  datasource: Gemweb platform</td>
+  <td>access granted
+  only for a set of public buildings partial data</td>
+ </tr>
+ <tr>
+  <td>INSPIRE Catalonia buildings</td>
+  <td>Government</td>
+  <td>gml</td>
+  <td>Three gml files per municipality within a compressed zip file. Extracted from this
+      <a href="http://www.catastro.minhafp.es/INSPIRE/buildings/ES.SDGC.BU.atom.xml">link</a>.</td>
+  <td>Can be published only with a preliminar transformation. More details
+      <a href="https://www.catastro.minhap.es/webinspire/documentos/Licencia.pdf">here</a>.</td>
+  <td>Linkable with geographical entities</td>
+  <td>Data <a href="https://www.catastro.minhap.es/webinspire/documentos/Conjuntos%20de%20datos.pdf">description</a>.
+  <br>
+    INSPIRE <a href="http://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_BU_v3.0rc2.pdf">Specification</a>.</td>
+  <td>Single datasource: Direcci&oacuten General del Catastro</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>INSPIRE
+  Catalonia addresses</td>
+  <td>Government</td>
+  <td>gml</td>
+  <td>One gml file per municipality within a compressed zip file.
+  Extracted from this <a href="http://www.catastro.minhafp.es/INSPIRE/Addresses/ES.SDGC.AD.atom.xml">link</a>.</td>
+  <td>Can be published only with a preliminar transformation. More
+  details <a href="https://www.catastro.minhap.es/webinspire/documentos/Licencia.pdf">here</a>.</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Data <a href="https://www.catastro.minhap.es/webinspire/documentos/Conjuntos%20de%20datos.pdf">description</a>.<br>
+    INSPIRE <a href="http://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_AD_v3.0.1.pdf">Specification</a>.</td>
+  <td>Single datasource: Direcci&oacuten General del Catastro</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>INSPIRE
+  Catalonia parcels</td>
+  <td>Government</td>
+  <td>gml</td>
+  <td>Two gml files per municipality within a compressed zip file.
+  Extracted from this <a href="http://www.catastro.minhafp.es/INSPIRE/CadastralParcels/ES.SDGC.CP.atom.xml">link</a>.</td>
+  <td>Can be published only with a preliminar transformation. More
+  details <a href="https://www.catastro.minhap.es/webinspire/documentos/Licencia.pdf">here</a>.</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Data <a href="https://www.catastro.minhap.es/webinspire/documentos/Conjuntos%20de%20datos.pdf">description</a>.<br>
+    INSPIRE <a href="http://inspire.ec.europa.eu/documents/Data_Specifications/INSPIRE_DataSpecification_CP_v3.0.1.pdf">Specification</a>.</td>
+  <td>Single datasource: Direcci&oacuten General del Catastro</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>Geonames
+  Spain regions</td>
+  <td>Government</td>
+  <td>ttl</td>
+  <td>ttl filtered only for Spain. Extracted from <a href="https://download.geonames.org/all-geonames-rdf.zip">here</a>.</td>
+  <td>Creative commons attributions license as stated in this <a href="https://www.geonames.org/export/">link</a>.</td>
+  <td>Linkable with geographical entities</td>
+  <td>Geonames ontology available to download in this <a href="https://www.geonames.org/ontology/ontology_v3.2.rdf">link</a>.
+  <br>
+    Features description can be seen <a href="http://www.geonames.org/statistics/total.html">here</a>.
+  </td>
+  <td>Crowd-sourced and combined with 402 datasources. More details <a href="http://www.geonames.org/datasources/" >here</a>.</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>Geonames
+  Catalonia provinces</td>
+  <td>Government</td>
+  <td>ttl</td>
+  <td>ttl filtered only for Catalonia. Extracted from <a href="https://download.geonames.org/all-geonames-rdf.zip">here</a>.</td>
+  <td>Creative commons attributions license as stated in this <a href="https://www.geonames.org/export/">link</a>.</td>
+  <td>Linkable with geographical entities</td>
 
-    <header>
-        <h1>Application Requirements</h1>
-        <p>An HTML document that discusses whether the selected datasets satisfy the requirements. All the requirements
-            must be satisfied by the datasets with the exception of the optional requirements; for these, the degree of
-            satisfaction must be discussed</p>
-        <p></p>
-    </header>
+  <td>Geonames ontology available to download in this <a href="https://www.geonames.org/ontology/ontology_v3.2.rdf">link</a>.<br>
+    Features description can be seen <a href="http://www.geonames.org/statistics/total.html">here</a>.</td>
+  <td>Crowd-sourced and combined with 402 datasources. More details <a href="http://www.geonames.org/datasources/" >here</a>.</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>Geonames
+  Catalonia municipalities</td>
+  <td>Government</td>
+  <td>ttl</td>
+  <td>ttl filtered only for Catalonia. Extracted from <a href="https://download.geonames.org/all-geonames-rdf.zip">here</a>.</td>
+  <td>Creative commons attributions license as stated in this <a href="https://www.geonames.org/export/">link</a>.</td>
+  <td>Linkable with
+  geographical entities</td>
+  <td>Geonames ontology available to download in this <a href="https://www.geonames.org/ontology/ontology_v3.2.rdf">link</a>.<br>
+    Features description can be seen <a href="http://www.geonames.org/statistics/total.html">here</a>.</td>
+  <td>Crowd-sourced and combined with 402 datasources. More details <a href="http://www.geonames.org/datasources/" >here</a>.</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td><span>Catalonia certificates of energetic efficiency of buildings</span></td>
+  <td>Energy</td>
+  <td>csv</td>
+  <td>Can be extracted in RDF format but seems incomplete. Csv extracted from this <a href="https://analisi.transparenciacatalunya.cat/en/Energia/Certificats-d-efici-ncia-energ-tica-d-edificis/j6ii-t3w2">webpage</a>.</td>
+  <td>Open license allowing publishment and distribution without modification. More details <a href="https://governobert.gencat.cat/ca/dades_obertes/llicencia-oberta-informacio-catalunya/"></a></td>
+  <td>Linkable with geographical entities</td>
+  <td>Dataset description available in this <a href="https://analisi.transparenciacatalunya.cat/en/Energia/Certificats-d-efici-ncia-energ-tica-d-edificis/j6ii-t3w2">webpage</a>.</td>
+  <td>Single datasource: Institut Catal&agrave d'Energia (ICAEN)</td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
 
-    <h2>Mock ups</h2>
+ <p>For the fourth requirement is detailed in the separate table shown below.</p>
 
-    <p>Esta primera imagen corresponde al formulario que rellenara el usuario para filtrar nuestro dataset.</p>
-    <img src="formulario.png" alt="formulario">
-    <p>Esta segunda muestra los resultados de nuestro filtro en una tabla.</p>
-    <img src="tabla.png" alt="tabla">
-    <p>El usario puede seleccionar uno de los eventos y ver características detalladas.</p>
-    <img src="evento.png" alt="evento">
+ <table>
+  <tr>
+   <th>Datadis supplies</th>
+   <th>Datadis timeseries</th>
+   <th>GPG patrimony</th>
+   <th>Gemweb buildings</th>
+   <th>Gemweb entities</th>
+   <th>Gemweb supplies</th>
+   <th>INSPIRE Catalonia buildings</th>
+   <th>INSPIRE Catalonia addresses</th>
+   <th>INSPIRE Catalonia parcels</th>
+   <th>Geonames Spain regions</th>
+   <th>Geonames Catalonia provinces</th>
+   <th>Geonames Catalonia municipalities</th>
+   <th>Catalonia certificates of energetic efficiency of buildings</th>
+  </tr>
+
+ </table>
+
 </body>
 </html>

@@ -2,4 +2,4 @@
 ================
 
 - Edgar Martínez S. -> *alexisimo*
-- Eloi Gabaldon 
+- Eloi Gabaldon -> *eloigabal*
