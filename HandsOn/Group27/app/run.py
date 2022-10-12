@@ -81,7 +81,9 @@ def build_popup(building, observation):
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <center><h4><b>{building.get("name")}</h4></b></center>
+        <center><h4 class="card-title"><b>{building.get("name")}</h4></b></center>
+
+        <p class="card-text">
         <br><b>Type of building</b>
         {building.get("type")}
         <br><b>Neighborhood</b>
@@ -96,7 +98,8 @@ def build_popup(building, observation):
         {type_of_energy}
         <br><b>Group of Energy</b>
         {observation.get('group')}
-        
+        </p>
+        <a href="http://www.google.com" target="_blank" class="card-link">More Info</a>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
