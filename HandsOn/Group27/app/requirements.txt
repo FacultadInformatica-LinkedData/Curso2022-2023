@@ -1,2 +1,3 @@
 flask # webapp
 folium # mapas
+rdflib 

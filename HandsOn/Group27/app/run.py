@@ -13,9 +13,7 @@ base_path = pathlib.Path(__file__).parents[1].resolve().as_posix()
 def index():
 
     buildings, building_types, neighborhoods, districts, years, months = load_query_params()
-
     build_init_map()
-    
     return render_template('index.html', 
                 building=buildings, 
                 building_type=building_types, 
