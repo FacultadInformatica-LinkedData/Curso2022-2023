@@ -76,6 +76,8 @@ def build_init_map():
     folium_map.save(base_path + '/app/templates/map.html')
 
 def build_popup(building, observation):
+    
+    type_of_energy = "Gas" if observation.get('units') == "m3" else "Electrica"
 
     txt = f"""
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -93,7 +95,7 @@ def build_popup(building, observation):
         <br><b>Consumption</b>
         {observation.get("value")} {observation.get("units")}
         <br><b>Type of Energy</b>
-        {observation.get('type')}
+        {type_of_energy}
         <br><b>Group of Energy</b>
         {observation.get('group')}
         
