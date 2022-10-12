@@ -1,5 +1,5 @@
 
-from model.graph_loader import graph, SCHEMA, XSD, EC, RDFS, TIME, SSN
+from model.graph_loader import graph, SCHEMA, XSD, EC, RDFS, TIME, SSN, OWL
 from rdflib.plugins.sparql import prepareQuery
 from datetime import datetime
 
@@ -19,7 +19,7 @@ def get_buildings_inf():
 
 
     query = """
-        SELECT DISTINCT ?building_id ?building_name ?structure_type ?structure_neighborhood ?structure_district ?latitude ?longitude
+        SELECT DISTINCT ?building_id ?building_name ?structure_type ?structure_neighborhood ?structure_district ?latitude ?longitude ?wikidata
         WHERE 
         {
             ?building_id a schema:CivicStructure ;
@@ -28,13 +28,13 @@ def get_buildings_inf():
                 ec:buildingType ?structure_type ;
                 ec:district ?structure_district ;
                 ec:neighborhood ?structure_neighborhood .
-            
+            OPTIONAL {?building_id owl:sameAs ?wikidata .}
             ?structure_geo a schema:GeoCoordinates ;
                 schema:latitude ?latitude ;
                 schema:longitude ?longitude .
         }
     """
-    result = exec_query(query, {"schema": SCHEMA, "xsd": XSD, "ec": EC, "rdfs":RDFS})
+    result = exec_query(query, {"schema": SCHEMA, "xsd": XSD, "ec": EC, "rdfs":RDFS, "owl": OWL})
 
     for row in result:
         buildings.add(row.building_name.value)
@@ -48,7 +48,9 @@ def get_buildings_inf():
             "name":row.building_name.value,
             "type": row.structure_type.value,
             "neighborhood": row.structure_neighborhood.value,
-            "district": row.structure_district.value
+            "district": row.structure_district.value,
+            # If there's no data from the openRefine Reconciliation process, then just search for data into wikidata...
+            "wikidata": str(row.wikidata) if row.wikidata is not None else f"https://www.wikidata.org/w/index.php?go=Go&search={row.building_name.value}"
         }
 
     buildings = list(buildings)
@@ -101,7 +103,7 @@ def observation_lookup(conditions: dict) -> list:
 
     latest_obs = dict()
     query = """
-        SELECT DISTINCT ?ob_id ?building_id ?ob_unit_text ?ob_value ?ob_ec_energy_group ?ob_ec_type_of_energy (year(?date) as ?year) (month(?date) as ?month) 
+        SELECT DISTINCT ?ob_id ?building_id ?ob_unit_text ?ob_value ?ob_ec_energy_group ?ob_ec_type_of_energy (year(?date) as ?year) (month(?date) as ?month)
         {
             ?ob_id a ssn:Observation ;
                 time:inXSDDate ?date ;
@@ -138,7 +140,7 @@ def observation_lookup(conditions: dict) -> list:
                 "units": row.ob_unit_text.value,
                 "value": row.ob_value.value,
                 "group": row.ob_ec_energy_group.value if row.ob_ec_energy_group is not None else "Not Defined",
-                "type": row.ob_ec_type_of_energy.value if row.ob_ec_type_of_energy is not None else "Not Defined"
+                "type": row.ob_ec_type_of_energy.value if row.ob_ec_type_of_energy is not None else "Not Defined",
             }
     
     return latest_obs

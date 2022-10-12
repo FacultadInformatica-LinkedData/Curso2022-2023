@@ -75,6 +75,20 @@ def build_init_map():
 
 def build_popup(building, observation):
     
+    spanish_months = {
+        "January":"Enero",
+        "February":"Febrero",
+        "March":"Marzo",
+        "April": "Abril",
+        "May":"Mayo",
+        "June":"Junio",
+        "July":"Julio",
+        "August":"Agosto",
+        "September":"Septiembre",
+        "Octubre":"Octubre",
+        "November":"Noviembre",
+        "December":"Diciembre"
+    }
     type_of_energy = "Gas" if observation.get('units') == "m3" else "Electrica"
 
     txt = f"""
@@ -91,7 +105,7 @@ def build_popup(building, observation):
         <br><b>District</b>
         {building.get("district")}
         <br><b>Date</b>
-        {observation.get("year")}-{observation.get("month")}
+        {spanish_months[observation.get("month")]}-{observation.get("year")}
         <br><b>Consumption</b>
         {observation.get("value")} {observation.get("units")}
         <br><b>Type of Energy</b>
@@ -99,7 +113,7 @@ def build_popup(building, observation):
         <br><b>Group of Energy</b>
         {observation.get('group')}
         </p>
-        <a href="http://www.google.com" target="_blank" class="card-link">More Info</a>
+        <a href="{building.get('wikidata')}" target="_blank" class="card-link">More Info</a>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

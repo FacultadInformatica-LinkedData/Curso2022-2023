@@ -1,5 +1,5 @@
 # Copyright (c) 2022 FSM Solutions.
-from rdflib import Graph, Namespace, RDFS
+from rdflib import Graph, Namespace, RDFS, OWL
 import pathlib
 
 graph = Graph()
