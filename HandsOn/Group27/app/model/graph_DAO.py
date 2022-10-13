@@ -8,6 +8,12 @@ c_building_inf = dict()
 c_years = list()
 c_months = dict()
 
+def get_build_inf(build_id):
+    if build_id not in c_building_inf.keys():
+        get_buildings_inf()
+    
+    return c_building_inf[build_id]
+
 def get_buildings_inf():
 
     global c_building_inf
@@ -91,7 +97,7 @@ def get_years_months():
         years.add(date.strftime("%Y"))
         months[date.strftime("%B")] = month
     
-    c_months = {str_:f"{value:01}"for str_, value in months.items()}
+    c_months = {str_:f"{value:02}"for str_, value in months.items()}
     c_years = list(years)
     return list(years), sorted(list(months.keys()), key=lambda x: months[x])
 
@@ -125,7 +131,6 @@ def observation_lookup(conditions: dict) -> list:
         } ORDER BY DESC(?date) 
     """
 
-    # TODO: Clean the output
     result = exec_query(query, {"ssn": SSN, "time":TIME, "xsd": XSD, "schema": SCHEMA, "xsd": XSD, "ec": EC, "rdfs":RDFS})
     
     for row in result:
@@ -174,7 +179,7 @@ def build_filters(conditions):
         filters.append(filter_pattern.format("year(?date)", conditions["year"] ))
 
     elif "month" in conditions:
-        filters.append(filter_pattern.format("month(?date)", c_months[conditions["month"]]))
+        filters.append("FILTER(xsd:integer(month(?date)) = xsd:integer({})).".format(c_months[conditions["month"]]))
 
     return "\n".join(filters)
 

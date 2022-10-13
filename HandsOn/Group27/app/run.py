@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from model import graph_DAO
-from model.graph_DAO import c_building_inf
 
 import folium
 import pathlib
@@ -8,6 +7,21 @@ import pathlib
 app = Flask(__name__)
 start_coords = (40.428285284058816, -3.7070024693800345)
 base_path = pathlib.Path(__file__).parents[1].resolve().as_posix()
+spanish_months = {
+    "January":"Enero",
+    "February":"Febrero",
+    "March":"Marzo",
+    "April": "Abril",
+    "May":"Mayo",
+    "June":"Junio",
+    "July":"Julio",
+    "August":"Agosto",
+    "September":"Septiembre",
+    "Octubre":"Octubre",
+    "November":"Noviembre",
+    "December":"Diciembre"
+}
+english_months = {spanish: english for english,spanish in spanish_months.items()}
 
 @app.route('/')
 def index():
@@ -20,7 +34,7 @@ def index():
                 district=districts, 
                 neighborhood=neighborhoods, 
                 year=years, 
-                month=months
+                month=[month for _,month in spanish_months.items()]
             )
 
 @app.route('/templates/map')
@@ -47,8 +61,7 @@ def exec_filter(conditions):
     folium_map = folium.Map(location=start_coords, zoom_start=12)
 
     for build_id, observation in observations.items():
-        building_inf = c_building_inf[build_id]
-
+        building_inf = graph_DAO.get_build_inf(build_id)
         folium.Marker(building_inf["location"], icon=folium.Icon(color="green", icon='map-marker', prefix='fa'), popup=build_popup(building_inf, observation)).add_to(folium_map)
     
     folium_map.save(base_path + '/app/templates/map.html')
@@ -60,14 +73,18 @@ def clean_conditions(conditions):
         if value != "default":
             new_conditions[key] = value
 
+    if "month" in new_conditions:
+        new_conditions["month"] = english_months[new_conditions["month"]]
+
     return new_conditions
+
 def build_init_map():
 
     observations = graph_DAO.get_latest_observations()
     folium_map = folium.Map(location=start_coords, zoom_start=12)
 
     for build_id, observation in observations.items():
-        building_inf = c_building_inf[build_id]
+        building_inf = graph_DAO.get_build_inf(build_id)
 
         folium.Marker(building_inf["location"], icon=folium.Icon(color="green", icon='map-marker', prefix='fa'), popup=build_popup(building_inf, observation)).add_to(folium_map)
     
@@ -75,20 +92,7 @@ def build_init_map():
 
 def build_popup(building, observation):
     
-    spanish_months = {
-        "January":"Enero",
-        "February":"Febrero",
-        "March":"Marzo",
-        "April": "Abril",
-        "May":"Mayo",
-        "June":"Junio",
-        "July":"Julio",
-        "August":"Agosto",
-        "September":"Septiembre",
-        "Octubre":"Octubre",
-        "November":"Noviembre",
-        "December":"Diciembre"
-    }
+
     type_of_energy = "Gas" if observation.get('units') == "m3" else "Electrica"
 
     txt = f"""
@@ -105,7 +109,7 @@ def build_popup(building, observation):
         <br><b>District</b>
         {building.get("district")}
         <br><b>Date</b>
-        {spanish_months[observation.get("month")]}-{observation.get("year")}
+        {observation.get("month")}-{observation.get("year")}
         <br><b>Consumption</b>
         {observation.get("value")} {observation.get("units")}
         <br><b>Type of Energy</b>
