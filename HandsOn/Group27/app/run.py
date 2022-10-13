@@ -109,7 +109,7 @@ def build_popup(building, observation):
         <br><b>District</b>
         {building.get("district")}
         <br><b>Date</b>
-        {observation.get("month")}-{observation.get("year")}
+        {spanish_months[observation.get("month")]}-{observation.get("year")}
         <br><b>Consumption</b>
         {observation.get("value")} {observation.get("units")}
         <br><b>Type of Energy</b>
