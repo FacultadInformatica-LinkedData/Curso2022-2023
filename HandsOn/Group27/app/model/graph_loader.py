@@ -3,7 +3,7 @@ from rdflib import Graph, Namespace, RDFS, OWL
 import pathlib
 
 graph = Graph()
-graph.parse(pathlib.Path(__file__).parents[2].resolve().as_posix() + "/rdf/consumo-energia-edificios-updated.ttl", format="ttl")
+graph.parse(pathlib.Path(__file__).parents[2].resolve().as_posix() + "/rdf/consumo-energia-edificios-updated-linked.ttl", format="ttl")
 
 # Used namespaces
 SSN = Namespace("http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#")
