@@ -11,7 +11,7 @@ prefixes:
 mappings:
     civic_structure:
         sources:
-            - [consumo-energia-edificios-updated.csv~csv]
+            - [consumo-energia-edificios-updated-with-links.csv~csv]
         s: http://www.semanticweb_g27.org/resource/CivicStructure/$(building_id)
         po:
             - [a, schema:CivicStructure]
@@ -39,7 +39,7 @@ mappings:
                     datatype: xsd:string
     geo_coordinates:
         sources:
-            - [consumo-energia-edificios-updated.csv~csv]
+            - [consumo-energia-edificios-updated-with-links.csv~csv]
         s: http://www.semanticweb_g27.org/resource/GeoCoordinates/$(geo_id)
         po:
             - [a, schema:GeoCoordinates]
@@ -57,7 +57,7 @@ mappings:
                     datatype: xsd:float
     observation:
         sources:
-            - [consumo-energia-edificios-updated.csv~csv]
+            - [consumo-energia-edificios-updated-with-links.csv~csv]
         s: http://www.semanticweb_g27.org/resource/Observation/$(observation_id)
         po:
             - [a, ssn:Observation]
