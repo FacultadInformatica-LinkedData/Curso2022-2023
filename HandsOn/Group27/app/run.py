@@ -17,7 +17,7 @@ spanish_months = {
     "July":"Julio",
     "August":"Agosto",
     "September":"Septiembre",
-    "Octubre":"Octubre",
+    "October":"Octubre",
     "November":"Noviembre",
     "December":"Diciembre"
 }
