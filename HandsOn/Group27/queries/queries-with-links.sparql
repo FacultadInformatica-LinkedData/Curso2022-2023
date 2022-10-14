@@ -5,6 +5,15 @@ PREFIX time: <http://www.w3.org/TR/owl-time#> .
 PREFIX schema: <http://schema.org/> .
 PREFIX owl: <http://www.w3.org/2002/07/owl#> .
 
+# Get all connected properties
+SELECT DISTINCT ?building_id  ?wikidata
+WHERE 
+{
+    ?building_id a schema:CivicStructure ;
+        owl:sameAs ?wikidata .
+
+}
+
 # Get building info
 SELECT DISTINCT ?building_id ?building_name ?structure_type ?structure_neighborhood ?structure_district ?latitude ?longitude ?wikidata
 WHERE 
