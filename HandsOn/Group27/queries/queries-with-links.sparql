@@ -1,18 +1,9 @@
-PREFIX ec:<http://www.semanticweb_g27.org/ontology/EnergyCons#> .
-PREFIX ssn: <http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#> .
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-PREFIX time: <http://www.w3.org/TR/owl-time#> .
-PREFIX schema: <http://schema.org/> .
-PREFIX owl: <http://www.w3.org/2002/07/owl#> .
-
-# Get all connected properties
-SELECT DISTINCT ?building_id  ?wikidata
-WHERE 
-{
-    ?building_id a schema:CivicStructure ;
-        owl:sameAs ?wikidata .
-
-}
+PREFIX ec:<http://www.semanticweb_g27.org/ontology/EnergyCons#> 
+PREFIX ssn: <http://www.w3.org/2005/Incubator/ssn/ssnx/ssn#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX time: <http://www.w3.org/TR/owl-time#> 
+PREFIX schema: <http://schema.org/> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
 
 # Get building info
 SELECT DISTINCT ?building_id ?building_name ?structure_type ?structure_neighborhood ?structure_district ?latitude ?longitude ?wikidata
