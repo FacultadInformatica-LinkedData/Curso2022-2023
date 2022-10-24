@@ -18,15 +18,11 @@
 ##
 ### Properties for a Sensor Measurement (Observation)
 ##
-ec:isValid rdf:type owl:ObjectProperty ;
-                rdfs:domain ssn:Observation ;
-                rdfs:range xsd:boolean .
-
 ec:typeOfEnergy rdf:type owl:ObjectProperty ; # Coherency refactor
                 rdfs:domain ssn:Observation ;
                 rdfs:range xsd:string .
 
-ec:energy rdf:type owl:ObjectProperty ; # Coherency refactor
+ec:energyGroup rdf:type owl:ObjectProperty ; # Coherency refactor
                 rdfs:domain ssn:Observation ;
                 rdfs:range xsd:string .
 
@@ -66,10 +62,6 @@ schema:address rdf:type owl:ObjectProperty ;
                 rdfs:domain ssn:CivicStructure ;
                 rdfs:range xsd:string .
 
-ec:buildingName rdf:type owl:ObjectProperty ;
-                rdfs:domain ssn:CivicStructure ;
-                rdfs:range xsd:string .
-
 ec:buildingType rdf:type owl:ObjectProperty ;
                 rdfs:domain ssn:CivicStructure ;
                 rdfs:range xsd:string .
@@ -78,15 +70,7 @@ ec:district rdf:type owl:ObjectProperty ;
                 rdfs:domain ssn:CivicStructure ;
                 rdfs:range xsd:string .
 
-ec:districtCode rdf:type owl:ObjectProperty ;
-                rdfs:domain ssn:CivicStructure ;
-                rdfs:range xsd:string .
-
 ec:neighborhood rdf:type owl:ObjectProperty ;
-                rdfs:domain ssn:CivicStructure ;
-                rdfs:range xsd:string .
-
-ec:neighborCode rdf:type owl:ObjectProperty ;
                 rdfs:domain ssn:CivicStructure ;
                 rdfs:range xsd:string .
 
