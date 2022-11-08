@@ -1,0 +1,173 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix ns:    <http://HO-G1.linkeddata.es/ontology/Chargingstation#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mv:    <http://schema.mobivoc.org/#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uiote: <http://www.w3id.org/urban-iot/uiote> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#bf56cd3ebb93b7fd2b70d29e77c54774>
+        a            sh:PropertyShape ;
+        rdfs:label   "has connector" ;
+        sh:class     uiote:Connector ;
+        sh:name      "has connector" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ns:hasConnector .
+
+<https://astrea.linkeddata.es/shapes#d8947ab247a350f6abbfde542fb863f7>
+        a            sh:PropertyShape ;
+        rdfs:label   "latitude" ;
+        sh:datatype  xsd:decimal ;
+        sh:name      "latitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      schema:latitude ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#7feeb8656d4a0008e9d536f7632efb73>
+        a            sh:PropertyShape ;
+        rdfs:label   "number of connectors" ;
+        sh:datatype  xsd:integer ;
+        sh:name      "number of connectors" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      ns:numberOfConnectors ;
+        sh:pattern   "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#e28a26bdb27c3d2c02a075c29c6b2eff>
+        a            sh:PropertyShape ;
+        rdfs:label   "owner" ;
+        sh:datatype  xsd:string ;
+        sh:name      "owner" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      ns:owner ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#8ea53f3a91ed88314aeb06ba0a8a66bf>
+        a               sh:NodeShape ;
+        rdfs:label      "Charging Station" ;
+        sh:name         "Charging Station" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bfb0cfb856b3f8e275796702b19b8b31> , <https://astrea.linkeddata.es/shapes#fea714d8c045434e5f46b5eb0696935c> , <https://astrea.linkeddata.es/shapes#95b60dc8c06efe9e7af307fe4e8115d8> , <https://astrea.linkeddata.es/shapes#e28a26bdb27c3d2c02a075c29c6b2eff> , <https://astrea.linkeddata.es/shapes#bf56cd3ebb93b7fd2b70d29e77c54774> , <https://astrea.linkeddata.es/shapes#b3c3d7389b345c8804a322b3cc42f3da> , <https://astrea.linkeddata.es/shapes#406ca2f0e608e5db8c1ba62d56a4a16f> , <https://astrea.linkeddata.es/shapes#e1cc96c1f32e1dc78553bdf9e6bf034f> , <https://astrea.linkeddata.es/shapes#ad51544473071732e3e56905b9fe2462> , <https://astrea.linkeddata.es/shapes#46fcdc75db4747a9c8a00d74c6d64ee3> ;
+        sh:targetClass  uiote:ChargingStation .
+
+<https://astrea.linkeddata.es/shapes#b0d278bef41670f06f2fabd2c5e18336>
+        a               sh:NodeShape ;
+        rdfs:label      "Geo Coordinates" ;
+        sh:name         "Geo Coordinates" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#eca6b1e3c35bcbe620aa6c7d0f5c2123> , <https://astrea.linkeddata.es/shapes#d8947ab247a350f6abbfde542fb863f7> ;
+        sh:targetClass  schema:GeoCoordinates .
+
+<https://astrea.linkeddata.es/shapes#fbc96dc4a81a7898e9416f90ddb88ed1>
+        a            sh:PropertyShape ;
+        rdfs:label   "plug type" ;
+        sh:datatype  xsd:string ;
+        sh:name      "plug type" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      mv:plugType ;
+        sh:pattern   ".*" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d8947ab247a350f6abbfde542fb863f7> , <https://astrea.linkeddata.es/shapes#fea714d8c045434e5f46b5eb0696935c> , <https://astrea.linkeddata.es/shapes#b0d278bef41670f06f2fabd2c5e18336> , <https://astrea.linkeddata.es/shapes#bfb0cfb856b3f8e275796702b19b8b31> , <https://astrea.linkeddata.es/shapes#bf56cd3ebb93b7fd2b70d29e77c54774> , <https://astrea.linkeddata.es/shapes#95b60dc8c06efe9e7af307fe4e8115d8> , <https://astrea.linkeddata.es/shapes#fbc96dc4a81a7898e9416f90ddb88ed1> , <https://astrea.linkeddata.es/shapes#ad51544473071732e3e56905b9fe2462> , <https://astrea.linkeddata.es/shapes#46fcdc75db4747a9c8a00d74c6d64ee3> , <https://astrea.linkeddata.es/shapes#406ca2f0e608e5db8c1ba62d56a4a16f> , <https://astrea.linkeddata.es/shapes#e1cc96c1f32e1dc78553bdf9e6bf034f> , <https://astrea.linkeddata.es/shapes#7feeb8656d4a0008e9d536f7632efb73> , <https://astrea.linkeddata.es/shapes#e28a26bdb27c3d2c02a075c29c6b2eff> , <https://astrea.linkeddata.es/shapes#045310f942fd6b03ef6573207b33eb38> , <https://astrea.linkeddata.es/shapes#8ea53f3a91ed88314aeb06ba0a8a66bf> , <https://astrea.linkeddata.es/shapes#b3c3d7389b345c8804a322b3cc42f3da> , <https://astrea.linkeddata.es/shapes#eca6b1e3c35bcbe620aa6c7d0f5c2123> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#95b60dc8c06efe9e7af307fe4e8115d8>
+        a            sh:PropertyShape ;
+        rdfs:label   "cables annotation" ;
+        sh:datatype  xsd:string ;
+        sh:name      "cables annotation" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      ns:cablesAnnotation ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#406ca2f0e608e5db8c1ba62d56a4a16f>
+        a            sh:PropertyShape ;
+        rdfs:label   "time limit" ;
+        sh:datatype  xsd:integer ;
+        sh:name      "time limit" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      ns:timeLimit ;
+        sh:pattern   "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#b3c3d7389b345c8804a322b3cc42f3da>
+        a            sh:PropertyShape ;
+        rdfs:label   "bookable" ;
+        sh:datatype  xsd:string ;
+        sh:name      "bookable" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      ns:bookable ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#e1cc96c1f32e1dc78553bdf9e6bf034f>
+        a            sh:PropertyShape ;
+        rdfs:label   "price" ;
+        sh:datatype  xsd:string ;
+        sh:name      "price" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      schema:price ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#fea714d8c045434e5f46b5eb0696935c>
+        a            sh:PropertyShape ;
+        rdfs:label   "address" ;
+        sh:datatype  xsd:string ;
+        sh:name      "address" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      schema:address ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#46fcdc75db4747a9c8a00d74c6d64ee3>
+        a            sh:PropertyShape ;
+        rdfs:label   "city" ;
+        sh:datatype  xsd:string ;
+        sh:name      "city" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      schema:City ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#ad51544473071732e3e56905b9fe2462>
+        a            sh:PropertyShape ;
+        rdfs:label   "schedule" ;
+        sh:datatype  xsd:string ;
+        sh:name      "schedule" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      schema:Schedule ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#eca6b1e3c35bcbe620aa6c7d0f5c2123>
+        a            sh:PropertyShape ;
+        rdfs:label   "longitude" ;
+        sh:datatype  xsd:decimal ;
+        sh:name      "longitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      schema:longitude ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#bfb0cfb856b3f8e275796702b19b8b31>
+        a            sh:PropertyShape ;
+        rdfs:label   "has geocoordinate" ;
+        sh:class     schema:GeoCoordinates ;
+        sh:name      "has geocoordinate" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ns:hasGeocoordinate .
+
+<https://astrea.linkeddata.es/shapes#045310f942fd6b03ef6573207b33eb38>
+        a               sh:NodeShape ;
+        rdfs:label      "Connector" ;
+        sh:name         "Connector" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fbc96dc4a81a7898e9416f90ddb88ed1> , <https://astrea.linkeddata.es/shapes#7feeb8656d4a0008e9d536f7632efb73> ;
+        sh:targetClass  uiote:Connector .
